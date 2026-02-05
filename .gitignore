@@ -1,0 +1,60 @@
+# --------------------
+# Node / JavaScript
+# --------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --------------------
+# Environment variables
+# --------------------
+.env
+.env.*
+!.env.example
+
+# --------------------
+# Shopify
+# --------------------
+.shopify/
+shopify.app.toml
+shopify.app.local.toml
+*.toml.bak
+
+# Extension build artifacts
+extensions/**/dist/
+extensions/**/.cache/
+
+# --------------------
+# Remix / Build output
+# --------------------
+build/
+dist/
+.cache/
+.tmp/
+
+# --------------------
+# Database (dev only)
+# --------------------
+prisma/dev.sqlite
+prisma/dev.sqlite-journal
+
+# --------------------
+# Logs
+# --------------------
+logs/
+*.log
+
+# --------------------
+# OS / Editor junk
+# --------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --------------------
+# Tests & coverage
+# --------------------
+coverage/
