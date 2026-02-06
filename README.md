@@ -1,5 +1,7 @@
 # Volume Discount Shopify App
 
+[Note - Find All project images added below the ReadMe file]
+
 A tiny Shopify application built using the MERN stack that enables merchants to configure and display "Buy 2, Get X% Off" automatic discounts.
 
 ## 🚀 Installation & Setup
@@ -82,18 +84,59 @@ Type: Automatic Discount (no coupon code required).
 
 OAuth & Installation: Verified.
 
-
 Admin Persistence: Saves to shop metafields correctly.
 
-
 PDP Widget: Correctly displays "Buy 2, get X% off" only for selected products.
-
 
 Functionality: Cart applies discount at quantity ≥ 2 and removes it below 2.
 
 ## 🛠️ Limitations & Future Steps
-
 Current Scope: Supports one product configuration at a time.
 
+# The Project Image Gallery
 
-## Next Steps: Implement multi-product support and tiered volume levels (e.g., Buy 5, get 20%).
+## Development Store Creation
+![Development Store Creation](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Store-creation.png)
+
+## Development Store Successfully Created
+![Development Store Successfully Created](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Dev-Store-Created.png)
+
+## Shopify Partner Dashboard Overview
+![Shopify Partner Dashboard Overview](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Dev-Dashboard-App.png)
+
+## Scaffolding the New Shopify App
+![Scaffolding the New Shopify App](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Built-New-shopify-App.png)
+
+## Project Structure & Milestone A Code
+![Project Structure & Milestone A Code](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Code-Milestone-A.png)
+
+## GraphQL Input Query for the Function
+![GraphQL Input Query for the Function](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/graphql.png)
+
+## Core Discount Function Logic Implementation
+![Core Discount Function Logic Implementation](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Milestone-B.png)
+
+## Automatic Discount Applied in Cart (10% Off)
+![Automatic Discount Applied in Cart (10% Off)](https://github.com/resel143/shopify-discount-app/blob/main/Submission%20Assets/milestone-B-10%25-off-price-drop.png)
+
+## Discount Function Activation in Admin
+![Discount Function Activation in Admin](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Discount_Milestone-B.png)
+
+## Volume Discount Manager Admin UI Interface
+![Volume Discount Manager Admin UI Interface](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Discount_Manager_UI.png)
+
+## Product Selection & Metafield Configuration
+![Product Selection & Metafield Configuration](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/milestone-C-AdminU.png)
+
+## Theme Editor - Adding the App Block
+![Theme Editor - Adding the App Block](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Volume-Discount-Dev-Theme-Option.png)
+
+## Live Storefront Widget Rendering (PDP)
+![Live Storefront Widget Rendering (PDP)](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Widget-Visible-C-Milestone.png)
+
+## App Successfully Released and Deployed
+![App Successfully Released and Deployed](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/App-released.png)
+
+## Final Shopify Admin Store Dashboard Overview
+![Final Shopify Admin Store Dashboard Overview](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Store-Dashboard.png)
+
