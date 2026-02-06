@@ -18,13 +18,13 @@ A tiny Shopify application built using the MERN stack that enables merchants to 
    
 2. **Start Development Server:**
 
-    npm run dev
+        npm run dev
 
 Follow the prompts to connect your development store.
 
 3. **Deploy Extensions:**
 
-    npm run deploy
+        npm run deploy
     
 ## ⚙️ Configuration
 
