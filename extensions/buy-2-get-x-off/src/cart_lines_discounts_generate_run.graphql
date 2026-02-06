@@ -1,15 +1,22 @@
-query CartInput {
+query RunInput {
   cart {
     lines {
       id
-      cost {
-        subtotalAmount {
-          amount
+      quantity
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            id
+          }
         }
       }
     }
   }
-  discount {
-    discountClasses
+  shop {
+    metafield(namespace: "volume_discount", key: "rules") {
+      value
+    }
   }
 }

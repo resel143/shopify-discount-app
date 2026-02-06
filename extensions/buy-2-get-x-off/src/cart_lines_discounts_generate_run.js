@@ -1,69 +1,66 @@
-import {
-  DiscountClass,
-  ProductDiscountSelectionStrategy,
-} from '../generated/api';
+// @ts-check
+import { ProductDiscountSelectionStrategy } from "../generated/api";
 
 /**
- * @typedef {import("../generated/api").CartInput} RunInput
+ * @typedef {import("../generated/api").RunInput} RunInput
  * @typedef {import("../generated/api").CartLinesDiscountsGenerateRunResult} CartLinesDiscountsGenerateRunResult
  */
+
+/**
+ * @type {CartLinesDiscountsGenerateRunResult}
+ */
+const EMPTY_DISCOUNT = {
+  operations: [],
+};
 
 /**
  * @param {RunInput} input
  * @returns {CartLinesDiscountsGenerateRunResult}
  */
-export function cartLinesDiscountsGenerateRun(input) {
-  const config = {
-    products: [
-      "gid://shopify/Product/9323466948840",
-    ],
-    minQty: 2,
-    percentOff: 10,
-  };
+export function run(input) {
+  // 1. Parse configuration from the Shop Metafield (saved by your Admin UI)
+  const config = JSON.parse(
+    input.shop?.metafield?.value || "{}"
+  );
 
-  if (!input.cart.lines.length || !config.products.length) {
-    return { operations: [] };
+  const { products, percentOff, minQty = 2 } = config;
+
+  // 2. Guards: If no products or percent configured, return no discount
+  if (!products || !products.length || !percentOff || !input.cart.lines.length) {
+    return EMPTY_DISCOUNT;
   }
 
-  const hasProductDiscountClass =
-    input.discount.discountClasses.includes(DiscountClass.Product);
-
-  if (!hasProductDiscountClass) {
-    return { operations: [] };
-  }
-
-  const candidates = [];
-
-  for (const line of input.cart.lines) {
-    const productId = line.merchandise.product.id;
-    const quantity = line.quantity;
-
-    const isEligibleProduct = config.products.includes(productId);
-    const meetsQuantity = quantity >= config.minQty;
-
-    if (isEligibleProduct && meetsQuantity) {
-      candidates.push({
-        message: `Buy ${config.minQty}, get ${config.percentOff}% off`,
-        targets: [
-          {
-            cartLine: {
-              id: line.id,
-            },
-          },
-        ],
-        value: {
-          percentage: {
-            value: config.percentOff,
+  // 3. Find eligible cart lines based on your Admin selection
+  const candidates = input.cart.lines
+    .filter((line) => {
+      const productId = line.merchandise.__typename === "ProductVariant" 
+        ? line.merchandise.product.id 
+        : null;
+        
+      // Check if product is in the list AND quantity is at least the minimum
+      return products.includes(productId) && line.quantity >= minQty;
+    })
+    .map((line) => ({
+      message: `Buy ${minQty}, get ${percentOff}% off`,
+      targets: [
+        {
+          cartLine: {
+            id: line.id,
           },
         },
-      });
-    }
-  }
+      ],
+      value: {
+        percentage: {
+          value: parseFloat(percentOff),
+        },
+      },
+    }));
 
   if (!candidates.length) {
-    return { operations: [] };
+    return EMPTY_DISCOUNT;
   }
 
+  // 4. Apply the discount operations
   return {
     operations: [
       {
