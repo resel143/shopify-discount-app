@@ -120,12 +120,6 @@ Future Step - Multi-Product & Collection Support, Tiered Discount Levels, Enhanc
 ## Automatic Discount Applied in Cart (10% Off)
 ![Automatic Discount Applied in Cart (10% Off)](https://github.com/resel143/shopify-discount-app/blob/main/Submission%20Assets/milestone-B-10%25-off-price-drop.png)
 
-## Discount Function Activation in Admin
-![Discount Function Activation in Admin](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Discount_Milestone-B.png)
-
-## Volume Discount Manager Admin UI Interface
-![Volume Discount Manager Admin UI Interface](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/Discount_Manager_UI.png)
-
 ## Product Selection & Metafield Configuration
 ![Product Selection & Metafield Configuration](https://raw.githubusercontent.com/resel143/shopify-discount-app/main/Submission%20Assets/milestone-C-AdminU.png)
 
