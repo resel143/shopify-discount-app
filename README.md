@@ -93,6 +93,8 @@ Functionality: Cart applies discount at quantity ≥ 2 and removes it below 2.
 ## 🛠️ Limitations & Future Steps
 Current Scope: Supports one product configuration at a time.
 
+Future Step - Multi-Product & Collection Support, Tiered Discount Levels, Enhanced Analytics Dashboard, Custom Styling Options for Widget
+
 # The Project Image Gallery
 
 ## Development Store Creation
