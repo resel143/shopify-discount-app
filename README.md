@@ -15,21 +15,20 @@ A tiny Shopify application built using the MERN stack that enables merchants to 
 1. **Install Dependencies:**
    ```bash
    npm install
+   
+2. **Start Development Server:**
 
-
-   Start Development Server:
-
-### Bash
-npm run dev
+    npm run dev
 
 Follow the prompts to connect your development store.
 
-Deploy Extensions:
+3. **Deploy Extensions:**
 
-### Bash
-npm run deploy
+    npm run deploy
+    
 ## ⚙️ Configuration
-1. Storefront Widget Setup
+
+### 1. Storefront Widget Setup
 Navigate to Online Store > Themes in your Admin.
 
 Click Customize (or Edit theme) on your active development theme.
@@ -42,7 +41,7 @@ Select the Apps tab and choose Volume Discount Widget.
 
 Click Save in the top right.
 
-2. Setting the Discount
+### 2. Setting the Discount
 Open the Volume-Discount-App from the Apps menu.
 
 Use the Product Picker to select your target product.
