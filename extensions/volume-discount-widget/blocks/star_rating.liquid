@@ -1,21 +1,72 @@
-{% assign avg_rating = block.settings.product.metafields.demo.avg_rating.value | round %}
-<span style="color:{{ block.settings.colour }}">
-  {% render 'stars', rating: avg_rating %}
-</span>
-{% if avg_rating >= 4 %}
-  <br>
-  <img src="{{ "thumbs-up.png" | asset_img_url: '15x' }}" height="15" width="15" loading="lazy">
-  {{ 'ratings.home.recommendationText' | t }}
+{% comment %} 
+  1. Extract the data and convert the GID to a simple ID 
+{% endcomment %}
+{% assign config = shop.metafields.volume_discount.rules.value %}
+{% assign saved_id = config.productId | split: '/' | last | plus: 0 %}
+
+{% comment %} 
+  UNCOMMENT THE LINE BELOW TO DEBUG IF IT STILL DOES NOT SHOW
+  DEBUG: Saved ID: {{ saved_id }} | Current Product ID: {{ product.id }}
+{% endcomment %}
+
+{% if config and product.id == saved_id %}
+  <div class="volume-widget-container">
+    <div class="widget-flex">
+      <div class="widget-icon">🏷️</div>
+      <div class="widget-text">
+        <p class="widget-title">Volume Discount Available!</p>
+        <p class="widget-sub">Buy 2+ items to unlock <strong>{{ config.percentOff }}% OFF</strong> at checkout.</p>
+      </div>
+    </div>
+  </div>
 {% endif %}
+
+<style>
+  .volume-widget-container {
+    background-color: #f6f6f7;
+    border: 1px solid #e1e3e5;
+    border-radius: 12px;
+    padding: 16px;
+    margin: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  }
+  .widget-flex {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .widget-icon {
+    font-size: 28px;
+    background: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .widget-title {
+    margin: 0;
+    font-weight: 700;
+    color: #202223;
+    font-size: 16px;
+  }
+  .widget-sub {
+    margin: 4px 0 0 0;
+    color: #5c5f62;
+    font-size: 14px;
+  }
+  .widget-sub strong {
+    color: #007ace;
+  }
+</style>
 
 {% schema %}
 {
-  "name": "Star Rating",
+  "name": "Volume Discount Widget",
   "target": "section",
   "settings": [
-    { "type": "product", "id": "product", "label": "product", "autofill": true },
-    { "type": "color", "id": "colour", "label": "Star Colour", "default": "#ff0000" }
+    { "label": "Color", "id": "color", "type": "color", "default": "#000000" }
   ]
 }
 {% endschema %}
-
